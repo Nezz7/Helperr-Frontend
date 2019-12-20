@@ -1,0 +1,80 @@
+<header>
+    <div class="container">
+        <div class="header-data">
+            <div class="logo">
+                <a><img src="../../assets/images/helpmelogo.png" class="helpme" height="40"></a>
+            </div>
+            <!--logo end-->
+            <div class="search-bar">
+                <form>
+                    <input type="text" name="search" placeholder="Search...">
+                    <button type="submit"><i class="la la-search"></i></button>
+                </form>
+            </div>
+            <!--search-bar end-->
+            <nav>
+                <ul>
+                    <li>
+                        <a [routerLink]="['/helpme']">
+                            <span><img src="../../assets/images/icon3.png" ></span> Help me
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/helpyou']">
+                            <span><img src="../../assets/images/icon5.png" ></span> Help you
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/messages']">
+                            <span><img src="../../assets/images/icon6.png" ></span> Messages
+                        </a>
+
+                    </li>
+                    <li>
+                        <a [routerLink]="['/notifications']">
+                            <span><img src="../../assets/images/icon7.png" ></span> Notification
+                        </a>
+                    </li>
+                    <li>
+                        <a href="companies.html">
+                            <span><img src="../../assets/images/icon2.png" ></span> Tokens
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--nav end-->
+            <div class="menu-btn">
+                <a><i class="fa fa-bars"></i></a>
+            </div>
+            <!--menu-btn end-->
+            <div class="user-account">
+                <div class="user-info">
+                    <img src="{{img}}" class="logobar">
+                    <a [routerLink]="['/profile']" class="capLetter">{{name}}</a>
+                    <i class="la la-sort-down"></i>
+                </div>
+                <div class="user-account-settingss">
+                    <h3>Custom Status</h3>
+                    <div class="search_form">
+                        <form>
+                            <input type="text" name="search">
+                            <button type="submit">Ok</button>
+                        </form>
+                    </div>
+                    <!--search_form end-->
+                    <h3>Setting</h3>
+                    <ul class="us-links">
+                        <li><a>Account Setting</a></li>
+                        <li><a>Privacy</a></li>
+                        <li><a>Faqs</a></li>
+                        <li><a>Terms & Conditions</a></li>
+                    </ul>
+                    <h3 class="tc"><a>Logout</a></h3>
+                </div>
+                <!--user-account-settingss end-->
+            </div>
+        </div>
+        <!--header-data end-->
+    </div>
+</header>
+<!--header end-->

@@ -1,0 +1,96 @@
+<div id="lp-register">
+    <div class="container wrapper">
+        <div class="row ">
+            <div class="col-sm-5">
+                <div class="intro-texts">
+                    <img class="logo" src="../../assets/images/helpmehelpyou-02.png" height="30%" width="40%">
+                    <br><br><br>
+                    <h1 class="text-white">Help &nbsp;&nbsp;&nbsp;&nbsp; us &nbsp;&nbsp;&nbsp;&nbsp; all &nbsp;&nbsp;!!!</h1>
+                    <p class="text-white fz">
+                        Help me Help you is a platform that allows students to share expertise with ease.
+                        <br> In order to obtain tokens, a user must provide services to others.
+                        <br> A service can be any task that can be done in 2 hours or less but requires a specific skill set that not all people possess.
+
+                    </p>
+                    <!--<button class="btn btn-primary">Learn More</button>-->
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-offset-1">
+                <div class="reg-form-container">
+
+                    <!-- Register/Login Tabs-->
+                    <div class="reg-options">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
+                            <li><a href="#login" data-toggle="tab">Login</a></li>
+                        </ul>
+                        <!--Tabs End-->
+                    </div>
+
+                    <!--Registration Form Contents-->
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="register">
+                            <h3>Register Now !!!</h3>
+                            <p class="text-muted">Be cool and join today. Help millions</p>
+
+                            <!--Register Form-->
+                            <form (ngSubmit)="onSignup(f)" #f="ngForm" class="form-inline">
+                                <div class="row">
+                                    <div class="form-group col-s-24">
+                                        <label for="username" class="sr-only">Username</label>
+                                        <input id="username" ngModel class="form-control input-group-xlg" type="text" name="username" placeholder="First name" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-s-24">
+                                        <label for="email" class="sr-only">Email</label>
+                                        <input id="email" ngModel class="form-control input-group-xlg" type="text" name="email" placeholder="Your Email" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-s-24">
+                                        <label for="password" class="sr-only">Password</label>
+                                        <input id="password" ngModel class="form-control input-group-xlg" type="password" name="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Register Now</button>
+                                </div>
+                            </form>
+                            <!--Register Now Form Ends-->
+
+                        </div>
+                        <!--Registration Form Contents Ends-->
+
+                        <!--Login-->
+                        <div class="tab-pane" id="login">
+                            <h3>Login</h3>
+                            <p class="text-muted">Log into your account</p>
+
+                            <!--Login Form-->
+                            <form (ngSubmit)="onSignin(fc)" #fc="ngForm" name="Login_form" id='Login_form'>
+                                <div>
+                                    <div class="form-group col-xs-12">
+                                        <label for="myemail" class="sr-only">Email</label>
+                                        <input id="myemail" ngModel class="form-control input-group-lg" type="text" name="myemail" placeholder="Your Email" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group col-xs-12">
+                                        <label for="mypassword" class="sr-only">Password</label>
+                                        <input id="mypassword" ngModel class="form-control input-group-lg" type="password" name="mypassword" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <!--Login Form Ends-->
+                                    <p><a href="#">Forgot Password?</a></p>
+                                    <button class="btn btn-primary" type="submit" [disabled]="!fc.valid">Login Now</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,18 @@
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logobar {
+    height: 30px;
+}
+
+.helpme {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.capLetter {
+    text-transform: capitalize;
+}
