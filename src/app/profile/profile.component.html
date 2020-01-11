@@ -1,0 +1,174 @@
+<app-nav-bar></app-nav-bar>
+<section class="cover-sec">
+    <img src="../../assets/images/resources/cover-img.jpg">
+    <a><i class="fa fa-camera"></i> Change Image</a>
+</section>
+
+
+
+<main>
+    <div class="main-section">
+        <div class="container">
+            <div class="main-section-data">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="main-left-sidebar">
+                            <div class="user_profile">
+                                <div class="user-pro-img" id="po">
+                                    <img src="{{img}}" class="logoprofile">
+
+                                    <a>
+                                        <i class="fa fa-camera upload-button" onclick="document.getElementById('uploadfile').click();"></i>
+                                        <input type="file" class="file-upload" (change)="onFiledSelected($event);" accept="image/*" id="uploadfile" />
+                                    </a>
+                                </div>
+                                <!--user-pro-img end-->
+                                <div class="user_pro_status">
+                                    <ul class="user-fw-status">
+                                        <li>
+                                            <h4>Tokens</h4>
+                                            <span>{{user.hp}}</span>
+                                        </li>
+                                        <li>
+                                            <h4>Score</h4>
+                                            <span>{{user.score}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--user_pro_status end-->
+                                <ul class="social_links">
+                                    <li><a><i class="la la-globe"></i> www.example.com</a></li>
+                                    <li><a><i class="fa fa-facebook-square"></i> Http://www.facebook.com/{{user.name}}</a></li>
+                                    <li><a><i class="fa fa-twitter"></i> Http://www.Twitter.com/{{user.name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--main-left-sidebar end-->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="main-ws-sec">
+                            <div class="user-tab-sec">
+                                <h3>{{user.name}}</h3>
+                                <div class="star-descp">
+                                    <span>{{user.occupation}}</span>
+
+                                    <ul>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star-half-o"></i></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <!--product-feed-tab end-->
+                            <div class="product-feed-tab current" id="info-dd">
+                                <div class="user-profile-ov">
+                                    <h3><a class="overview-open">Overview</a>
+                                        <a class="overview-open"><i (click)="onClickOverview()" class="fa fa-pencil"></i></a>
+                                    </h3>
+                                    <div *ngIf="!onOverview">
+                                        <p *ngIf="description">Update your Overview</p>
+                                        <p *ngIf="!description">{{user.description}}</p>
+                                    </div>
+                                    <div *ngIf="onOverview">
+                                        <form (ngSubmit)="onUpdateDescription()" #f="ngForm" class="form-group">
+                                            <textarea id="description" class="form-control input-group-xlg " row="3" [(ngModel)]="value" name="description">{{user.description}} </textarea>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button class="btn btn-light mt-2 " style="margin-left: 360px" (click)="onOverview=false">Skip</button>
+                                                <button class="btn btn-primary mt-2 ml-2" type="submit " [disabled]="!f.valid ">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="user-profile-ov ">
+                                    <h3><a class="exp-bx-open ">Occupation </a><a class="exp-bx-open "><i (click)="onOccupation=true" class="fa fa-pencil "></i></a> </h3>
+                                    <div *ngIf="!onOccupation">
+                                        <p *ngIf="occupation">Update your Occupation</p>
+                                        <p *ngIf="!occupation">{{user.occupation}}</p>
+                                    </div>
+                                    <div *ngIf="onOccupation">
+                                        <form (ngSubmit)="onUpdateOccupation(f)" #f="ngForm" class="form-group ">
+                                            <input id="occupation" class="form-control input-group-xlg " type="text " ngModel name="occupation" placeholder="{{user.occupation}} ">
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button class="btn btn-light mt-2 " style="margin-left: 360px" (click)="onOccupation=false">Skip</button>
+                                                <button class="btn btn-primary mt-2 ml-2" type="submit " [disabled]="!f.valid ">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="user-profile-ov ">
+                                    <h3><a class="exp-bx-open ">Institution </a><a class="exp-bx-open "><i (click)="onInstitution=true" class="fa fa-pencil "></i></a> </h3>
+                                    <div *ngIf="!onInstitution">
+                                        <p *ngIf="institution">Update your Institution</p>
+                                        <p *ngIf="!institution">{{user.institution}}</p>
+                                    </div>
+                                    <div *ngIf="onInstitution">
+                                        <form (ngSubmit)="onUpdateInstitution(f)" #f="ngForm" class="form-group ">
+                                            <input id="institution" class="form-control input-group-xlg " type="text " ngModel name="institution" placeholder="{{user.institution}} ">
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button class="btn btn-light mt-2 " style="margin-left: 360px" (click)="onInstitution=false">Skip</button>
+                                                <button class="btn btn-primary mt-2 ml-2" type="submit " [disabled]="!f.valid ">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="user-profile-ov ">
+                                    <h3><a class="skills-open ">Skills</a> <a (click)="deleteSkill=true;"><i class="fa fa-minus-square"></i></a><a (click)="addSkill=true;"><i class="fa fa-plus-square "></i></a> </h3>
+                                    <div *ngIf="!deleteSkill && !addSkill">
+                                        <p *ngIf="skills">Add a skill </p>
+                                        <ul *ngIf="!skills">
+                                            <li *ngFor="let skill of user.skills"><a>{{skill}}</a></li>
+                                        </ul>
+                                    </div>
+                                    <div *ngIf="deleteSkill">
+                                        <div> Deleting a Skill :</div>
+                                        <br>
+                                        <form (ngSubmit)="onDeleteSkill(f)" #f="ngForm" class="form-group ">
+                                            <input id="skill" class="form-control input-group-xlg " type="text " ngModel name="skill">
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button class="btn btn-light mt-2 " style="margin-left: 360px" (click)="deleteSkill=false">Skip</button>
+                                                <button class="btn btn-primary mt-2 ml-2" type="submit " [disabled]="!f.valid ">Delete</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div *ngIf="addSkill">
+                                        <div class="mb-3">Adding a Skill :</div>
+                                        <form (ngSubmit)="onAddSkill(f)" #f="ngForm" class="form-group ">
+                                            <input id="skill" class="form-control input-group-xlg " type="text " ngModel name="skill">
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button class="btn btn-light mt-2 " style="margin-left: 360px" (click)="addSkill=false">Skip</button>
+                                                <button class="btn btn-primary mt-2 ml-2" type="submit " [disabled]="!f.valid ">Add</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--user-profile-ov end-->
+                            </div>
+
+                        </div>
+                        <!--main-ws-sec end-->
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="right-sidebar ">
+                            <div class="message-btn ">
+                                <a><i class="fa fa-envelope "></i> Message</a>
+                            </div>
+                            <div class="widget widget-about">
+                                <img src="../../assets/images/helpmehelpyou-01.png" style="height : 300px">
+                            </div>
+                            <!--pf-gallery end-->
+                            <!--widget-portfolio end-->
+                        </div>
+                        <!--user-profile-ov end-->
+
+                    </div>
+                </div>
+            </div>
+            <!-- main-section-data end-->
+        </div>
+    </div>
+</main>

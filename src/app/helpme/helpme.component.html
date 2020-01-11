@@ -1,0 +1,210 @@
+<app-nav-bar></app-nav-bar>
+<main>
+    <div class="main-section">
+        <div class="container">
+            <div class="main-section-data">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 pd-left-none no-pd">
+                        <div class="main-left-sidebar no-margin">
+                            <div class="user-data full-width">
+                                <div class="user-profile">
+                                    <div class="username-dt">
+                                        <div class="usr-pic">
+                                            <img src="{{img}}">
+                                        </div>
+                                    </div>
+                                    <!--username-dt end-->
+                                    <div class="user-specs">
+                                        <h3>{{user.name}}</h3>
+                                        <span>{{user.occupation}}</span>
+                                    </div>
+                                </div>
+                                <!--user-profile end-->
+                                <ul class="user-fw-status">
+                                    <li>
+                                        <h4>Tokens</h4>
+                                        <span>{{user.hp}}</span>
+                                    </li>
+                                    <li>
+                                        <h4>Score</h4>
+                                        <span>{{user.score}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--user-data end-->
+                            <div class="suggestions full-width">
+                                <div class="sd-title">
+                                    <h3>Suggestions</h3>
+                                    <i class="la la-ellipsis-v"></i>
+                                </div>
+                                <!--sd-title end-->
+                                <div class="suggestions-list">
+                                    <div class="suggestion-usd">
+                                        <img src="../../assets/images/resources/s4.png">
+                                        <div class="sgt-text">
+                                            <h4>Bill Gates</h4>
+                                            <span>C & C++ Developer</span>
+                                        </div>
+                                        <span><i class="la la-plus"></i></span>
+                                    </div>
+
+                                    <div class="view-more">
+                                        <a title="">View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--main-left-sidebar end-->
+                    </div>
+                    <div class="col-lg-6 col-md-8 no-pd">
+                        <div class="main-ws-sec">
+                            <div class="post-topbar">
+                                <strong class="quote job_descp"> 
+                                    The strong individual is the one who asks for help when he needs it.
+                                </strong>
+                                <div class="post-st ">
+                                    <ul>
+                                        <li><a class="post-jb active" (click)="onGetProfile()">Post a Help Request</a></li>
+                                    </ul>
+                                </div>
+                                <!--post-st end-->
+                            </div>
+                            <!--post-topbar end-->
+                            <div class="posts-section ">
+                                <div class="post-bar " *ngFor="let post of posts">
+                                    <div class=" post_topbar ">
+                                        <div class="usy-dt ">
+                                            <img src="{{img}}" style="height: 50px">
+                                            <div class="usy-name ">
+                                                <h3>{{user.name}}</h3>
+                                                <span><img src="../../assets/images/clock.png " >{{post.created_at}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="ed-opts ">
+                                            <a class="ed-opts-open "><i class="la la-ellipsis-v "></i></a>
+                                            <ul class="ed-options ">
+                                                <li><a>Edit Post</a></li>
+                                                <li><a (click)="removeHelpRequest(post.id)">Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="epi-sec ">
+                                        <ul class="descp ">
+                                            <li><img src="../../assets/images/icon8.png "><span>{{user.occupation}}</span></li>
+                                            <li><img src="../../assets/images/icon9.png "><span>{{user.institution}}</span></li>
+                                        </ul>
+                                        <ul class="bk-links ">
+                                            <li><a><i class="la la-bookmark "></i></a></li>
+                                            <li><a><i class="la la-envelope "></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="job_descp">
+                                        <h3>{{post.title}}</h3>
+                                        <ul class="job-dt">
+                                            <li><a>{{post.status}}</a></li>
+                                            <li><span>Cost : {{post.cost}}</span></li>
+                                        </ul>
+                                        <p> {{post.description}} </p>
+                                        <ul class="skill-tags" style="display: inline">
+                                            <li *ngFor="let skill of post.skills"><a>{{skill}}</a></li>
+                                        </ul>
+                                    </div>
+                                    <!--
+                                    <div class="job-status-bar ">
+                                        <ul class="like-com ">
+                                            <li>
+                                                <a><i class="la la-heart "></i> Like</a>
+                                                <img src="../../assets/images/liked-img.png ">
+                                                <span>25</span>
+                                            </li>
+                                            <li>
+                                                <a class="com "><img src="../../assets/images/com.png "> Comment 15</a>
+                                            </li>
+                                        </ul>
+                                        <a><i class="la la-eye "></i>Views 50</a>
+                                    </div>
+                                -->
+                                </div>
+                                <div class="process-comm ">
+                                    <a><img src="../../assets/images/process-icon.png "></a>
+                                </div>
+                                <!--process-comm end-->
+                            </div>
+                            <!--posts-section end-->
+                        </div>
+                        <!--main-ws-sec end-->
+                    </div>
+                    <div class="col-lg-3 pd-right-none no-pd ">
+                        <div class="right-sidebar ">
+                            <div class="widget widget-about ">
+                                <img src="../../assets/images/helpmehelpyou-01.png" style="height : 300px">
+                            </div>
+                            <!--widget-about end-->
+
+                            <!--widget-jobs end-->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main-section-data end-->
+        </div>
+    </div>
+</main>
+
+
+<div class="post-popup job_post " id="helpRequestPost ">
+    <div class="post-project ">
+        <h3>Post a Help Request </h3>
+        <div class="post-project-fields ">
+            <form (ngSubmit)="postHelpRequest(f) " #f="ngForm">
+                <div class="row ">
+                    <div class="col-lg-12 ">
+                        <input type="text" name="title" ngModel placeholder="Title " required>
+                    </div>
+                    <div class="col-lg-12 ">
+                        <input type="text " name="short_description" ngModel placeholder="Short Description " required>
+                    </div>
+
+                    <div class="col-lg-12 ">
+                        <input type="text " name="skills" ngModel placeholder="Skills" required>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="price-br ">
+                            <input type="number " name="cost" ngModel value="1" required>
+                            <i class="la la-dollar "></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="inp-field ">
+                            <select ngModel name="status" required>
+                                    <option>open</option>
+                                    <option>selective</option>
+                             </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 ">
+                        <textarea name="description" row="4 " placeholder="Description" ngModel required></textarea>
+                    </div>
+                    <!--
+                    <div class="col-lg-12 ">
+                        <input type="file " class="form-control-file " id="customFileLang ">
+                    </div>
+                -->
+                    <div class="col-lg-12 ">
+                        <ul>
+                            <li>
+                                <button class="active " type="submit " style="margin-left: 425px " [disabled]="!f.valid ">Post</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--post-project-fields end-->
+        <a><i class="la la-times-circle-o "></i></a>
+    </div>
+    <!--post-project end-->
+</div>
+<!--post-project-popup end-->
